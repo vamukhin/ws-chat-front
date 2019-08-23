@@ -1,8 +1,15 @@
 import {createGlobalStyle} from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-    html, #root  {
+    html {
         height: 100%;
+    }
+
+    #root {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     body {

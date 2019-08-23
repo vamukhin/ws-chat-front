@@ -1,6 +1,6 @@
 import React, {PureComponent} from "react";
 import { connect } from 'react-redux'
-import { LoginContainer, LoginForm, LoginHeader, LoginInput } from "./login-styled";
+import { LoginForm, LoginHeader, LoginInput } from "./login-styled";
 import { loginAction } from "../../redux/actions";
 
 class LoginDumb extends PureComponent {
@@ -18,15 +18,15 @@ class LoginDumb extends PureComponent {
 
     render(){
         return (
-            <LoginContainer>
-                <LoginForm onSubmit = {this.onSubmit}>
-                    <LoginHeader>Введите имя</LoginHeader>
-                   
-                    <LoginInput ref={this.textInput}/>
-                    
-                    <button type = "submit">Залогиниться</button>
-                </LoginForm>
-            </LoginContainer>
+         
+            <LoginForm onSubmit = {this.onSubmit}>
+                <LoginHeader>Введите имя</LoginHeader>
+                
+                <LoginInput ref={this.textInput}/>
+                
+                <button type = "submit">Залогиниться</button>
+            </LoginForm>
+            
         )
     }
 }

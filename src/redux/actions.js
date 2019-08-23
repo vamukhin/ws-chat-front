@@ -1,4 +1,4 @@
-import { socketActionTypes } from './action-types';
+import { socketActionTypes, actionTypes } from './action-types';
 
 const createAction = (type) => (payload) => ({
     type,
@@ -13,4 +13,8 @@ const createWebSocketAction = (type) => (payload) => ({
 
 
 
-export const loginAction = createWebSocketAction(socketActionTypes.auth)
+export const loginAction = createAction(actionTypes.SET_NAME);
+
+export const getMessage = createAction(actionTypes.GET_MESSAGE)
+
+export const sendMessage = createWebSocketAction(socketActionTypes.chatMessage)
