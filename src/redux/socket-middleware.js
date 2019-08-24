@@ -1,5 +1,5 @@
 export function socketMiddleware(host, reduxActionHandlers, socketHandlers) {
-    var socket = new WebSocket("ws://localhost:8081");
+    var socket = new WebSocket(host);
 
     return (store) => (next) => (action) => {
 
