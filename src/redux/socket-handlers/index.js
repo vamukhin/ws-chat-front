@@ -1,10 +1,10 @@
 import { socketActionTypes } from "../action-types";
-import { isLoggedSelector } from "../selectors";
+import { nameSelector } from "../selectors";
 
 export const socketHandlers = {
     [socketActionTypes.chatMessage]: (store, payload) => {
         const messageText = payload;
-        const userName = isLoggedSelector(store.getState())
+        const userName = nameSelector(store.getState())
         return {
             messageText, userName
         }

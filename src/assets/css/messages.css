@@ -1,0 +1,67 @@
+.messages-area {
+    margin: 50px;
+    box-shadow: 0 0 80px rgba(0,0,0,0.5);
+    background-color: #fafafa;
+    display: flex;
+    border-radius: 6px;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    flex-direction: column;
+}
+
+.sent-messages-container {
+    flex-basis: 0px;
+    flex-grow: 1;
+    padding: 11px;
+    overflow-y: auto;
+}
+
+.chat-form {
+    flex-basis: 40px;
+    display: block;
+    position: relative;
+}
+
+.chat-input {
+    height: 100%;
+    width: calc(100% - 40px);
+    padding: 0 30px 0 10px;
+    border: 0;
+    background-color: #eaf2f2;
+    border-radius: 0 0 6px 6px;
+}
+
+.chat-button {
+    position: absolute;
+    right: 10px;
+    line-height: 40px;
+    border: 0;
+    background-color: transparent;
+}
+
+.chat-button::after {
+    content:"\1f582";
+    cursor: pointer;
+}
+
+.message-container {
+    display: flex;
+    margin: 5px 0;
+}
+
+.message-text {
+    word-break: break-all;
+    max-width: 80%;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 5px;
+    background-color: rgba(0, 8, 255, 0.07058823529411765);
+}
+
+.host-message {
+    justify-content: flex-end;
+}
+
+.friend-message {
+    justify-content: flex-start;
+}

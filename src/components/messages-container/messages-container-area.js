@@ -1,29 +1,32 @@
 import React, {Component} from "react";
-import { StyledMessagesArea, ChatForm, ChatInput, SentMessagesContainer } from "./messages-container-styled";
 import { connect } from 'react-redux'
 import { sendMessage } from "../../redux/actions";
 import { Messages } from "./message";
 
 class MessagesContainerAreaDumb extends Component {
     textInput = React.createRef();
+    
     send = (e) => {
         e.preventDefault();
-        console.log(this.textInput.current.value, this.props);
-        const message = this.textInput.current.value
-        this.props.sendMessage(message)
-        this.textInput.current.value = ''
+        const message = this.textInput.current.value;
+        if(typeof message === 'string' && message.length > 0) {
+            this.props.sendMessage(message)
+            this.textInput.current.value = '';
+            this.textInput.current.focus()
+        }
     }
 
     render(){
         return (
-            <StyledMessagesArea>
-                <SentMessagesContainer>
+            <div className = "messages-area">
+                <div className = "sent-messages-container">
                     <Messages/>
-                </SentMessagesContainer>
-                <ChatForm onSubmit = {this.send}>
-                    <ChatInput ref={this.textInput}/>
-                </ChatForm>
-            </StyledMessagesArea>
+                </div>
+                <form className = "chat-form" onSubmit = {this.send}>
+                    <input className="chat-input" ref={this.textInput}/>
+                    <button className = "chat-button" type = 'submit'/>
+                </form>
+            </div>
         )
     }
 }

@@ -1,0 +1,27 @@
+@import url("./login.css");
+@import url("./messages.css");
+html {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(to top right, #7dc244, #00703c);
+    font-family: monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button:focus, input:focus {
+    outline:0;
+}

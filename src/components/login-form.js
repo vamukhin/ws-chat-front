@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
 import { connect } from 'react-redux'
-import { LoginForm, LoginHeader, LoginInput } from "./login-styled";
-import { loginAction } from "../../redux/actions";
+import { loginAction } from "../redux/actions";
 
 class LoginDumb extends PureComponent {
 
@@ -19,17 +18,19 @@ class LoginDumb extends PureComponent {
     render(){
         return (
          
-            <LoginForm onSubmit = {this.onSubmit}>
-                <LoginHeader>Введите имя</LoginHeader>
+            <form className = "login-form" onSubmit = {this.onSubmit}>
+                <h1 className = "login-header">Введите имя</h1>
                 
-                <LoginInput ref={this.textInput}/>
+                <input className = "login-input" ref={this.textInput}/>
                 
-                <button type = "submit">Залогиниться</button>
-            </LoginForm>
+                <button className = 'login-button' type = "submit">Залогиниться</button>
+            </form>
             
         )
     }
 }
+
+
 
 const mapDispatchToProps = ({
     loginAction

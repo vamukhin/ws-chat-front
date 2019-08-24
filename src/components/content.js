@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import { Login } from "./login/login-form";
+import { Login } from "./login-form";
 import { MessagesContainerArea } from "./messages-container/messages-container-area";
 import { connect } from 'react-redux'
-import { isLoggedSelector } from "../redux/selectors";
+import { nameSelector } from "../redux/selectors";
 
 class ContentDumb extends Component {
     render(){
@@ -11,7 +11,7 @@ class ContentDumb extends Component {
 }
 
 const mapStateToProps = state => ({
-    isLogged: isLoggedSelector(state)
+    isLogged: nameSelector(state)
 })
 
 export const Content = connect(mapStateToProps)(ContentDumb)
