@@ -5,7 +5,7 @@ import { socketHandlers } from './socket-handlers';
 import { rootReducer } from './reducers';
 import { fromSocketToReduxHandlers } from './from-socket-ro-redux-thunks';
 
-const middlewares = [socketMiddleware("ws://wschat-server.herokuapp.com", socketHandlers, fromSocketToReduxHandlers)];
+const middlewares = [socketMiddleware("wss://wschat-server.herokuapp.com", socketHandlers, fromSocketToReduxHandlers)];
 
 if (process.env.NODE_ENV !== 'production') { 
     middlewares.push(logger)
