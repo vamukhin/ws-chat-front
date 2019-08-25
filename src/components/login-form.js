@@ -7,7 +7,7 @@ class LoginDumb extends PureComponent {
     constructor(props) {
         super(props);
         this.textInput = React.createRef();
-      }
+    }
 
     onSubmit = (e) => {
         e.preventDefault();

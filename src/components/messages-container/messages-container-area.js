@@ -5,7 +5,7 @@ import { Messages } from "./message";
 
 class MessagesContainerAreaDumb extends Component {
     textInput = React.createRef();
-    
+
     send = (e) => {
         e.preventDefault();
         const message = this.textInput.current.value;
@@ -23,7 +23,7 @@ class MessagesContainerAreaDumb extends Component {
                     <Messages/>
                 </div>
                 <form className = "chat-form" onSubmit = {this.send}>
-                    <input className="chat-input" ref={this.textInput}/>
+                    <input className="chat-input" autoFocus  ref={this.textInput}/>
                     <button className = "chat-button" type = 'submit'/>
                 </form>
             </div>
